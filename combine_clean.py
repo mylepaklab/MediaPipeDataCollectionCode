@@ -10,8 +10,11 @@ gesture_labels = list(string.ascii_uppercase)
 # Add custom gestures
 gesture_labels += ['ya', 'stop']
 
-# Add numbers 1 through 10 as strings
+# Add numbers 1 through 10
 gesture_labels += [str(i) for i in range(1, 11)]
+
+# Add custom numbers
+gesture_labels += ['11', '21', '50', '70', '100']
 
 for label in gesture_labels:
     # Use 'letter' prefix for letters and words, 'number' for digits
@@ -39,18 +42,15 @@ for label in gesture_labels:
     # Assign column names
     df.columns = landmark_cols
 
-    # Assign correct label as UPPERCASE string
+    # Assign correct label as uppercase string (even for numbers and words)
     df['label'] = str(label).upper()
-
-    # Ensure label column is string type
-    df['label'] = df['label'].astype(str)
 
     dfs.append(df)
 
 # Combine all dataframes
 combined_df = pd.concat(dfs, ignore_index=True)
 
-# Ensure label column is string in final combined DataFrame
+# Force label column to string
 combined_df['label'] = combined_df['label'].astype(str)
 
 # Save to CSV
