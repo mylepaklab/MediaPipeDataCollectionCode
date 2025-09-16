@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gesture Recognition Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      background: #222;
+      color: white;
+    }
+    video, canvas {
+      margin-top: 20px;
+      border-radius: 10px;
+      max-width: 90vw;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gesture Recognition Demo</h1>
+  <video id="webcam" autoplay playsinline muted width="640" height="480"></video>
+  <canvas id="outputCanvas" width="640" height="480"></canvas>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
+
